@@ -1687,7 +1687,7 @@ elif tutorial_section == "📚 Study Resources":
         - Can check your graphing solutions
         
         **GeoGebra Systems Solver**
-        - [www.geogebra.org](https://www.geogebra.org/m/znssntar)
+        - [www.geogebra.org](https://www.geogebra.org/)
         - Interactive system solver
         - Shows step-by-step solutions
         - Great for checking work
