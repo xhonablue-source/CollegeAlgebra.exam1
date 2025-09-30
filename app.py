@@ -37,11 +37,12 @@ tutorial_section = st.sidebar.radio("Choose a section:", [
     "🎯 Choosing the Best Method",
     "💪 Practice Problems",
     "📋 Practice Test",
+    "📚 Study Resources",
     "🎓 Exam Day Tips"
 ])
 
 # Progress indicator
-total_sections = 10
+total_sections = 11
 completed = len(st.session_state.completed_sections)
 st.sidebar.progress(completed / total_sections)
 st.sidebar.write(f"Progress: {completed}/{total_sections} sections completed")
@@ -1494,6 +1495,284 @@ elif tutorial_section == "📋 Practice Test":
         if st.button("Retake Test"):
             st.session_state.test_submitted = False
 
+# ==================== STUDY RESOURCES ====================
+elif tutorial_section == "📚 Study Resources":
+    st.header("Study Resources for Systems of Equations")
+    
+    st.markdown("""
+    Use these resources to supplement your learning and get extra practice!
+    """)
+    
+    # Video Resources
+    st.subheader("🎥 Video Tutorials")
+    st.markdown("Watch these high-quality video lessons to reinforce concepts:")
+    
+    with st.expander("📺 Introduction to Systems"):
+        st.markdown("""
+        **Khan Academy - Introduction to Systems of Linear Equations**
+        - [What is a System of Equations?](https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:systems-of-equations)
+        - Clear explanations with visual examples
+        - Perfect for understanding the basics
+        
+        **The Organic Chemistry Tutor - Systems Overview**
+        - [Systems of Equations - Complete Review](https://www.youtube.com/watch?v=FRaJv2Faass)
+        - Comprehensive 30-minute tutorial covering all methods
+        - Great for exam review
+        """)
+    
+    with st.expander("📺 Graphing Method"):
+        st.markdown("""
+        **Khan Academy - Solving by Graphing**
+        - [Solving Systems by Graphing](https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:systems-of-equations/x2f8bb11595b61c86:solving-systems-of-equations-by-graphing/v/solving-systems-by-graphing)
+        - Step-by-step graphing demonstrations
+        
+        **MathAntics - Graphing Systems**
+        - [Systems of Equations - Graphing](https://www.youtube.com/watch?v=gF6Wtq-OJjA)
+        - Simple, clear explanations with visual aids
+        - Good for beginners
+        """)
+    
+    with st.expander("📺 Substitution Method"):
+        st.markdown("""
+        **Khan Academy - Substitution Method**
+        - [Solving Systems by Substitution](https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:systems-of-equations/x2f8bb11595b61c86:solving-systems-of-equations-with-substitution/v/solving-systems-of-equations-by-substitution)
+        - Multiple practice examples
+        
+        **The Organic Chemistry Tutor - Substitution**
+        - [Solving Systems Using Substitution](https://www.youtube.com/watch?v=FdAW18GGsMQ)
+        - Clear algebraic steps
+        - Works through complex examples
+        
+        **Professor Dave Explains - Substitution**
+        - [Solving Systems of Equations by Substitution](https://www.youtube.com/watch?v=Jm6VkI4lIjw)
+        - Concise and focused
+        """)
+    
+    with st.expander("📺 Elimination Method"):
+        st.markdown("""
+        **Khan Academy - Elimination Method**
+        - [Solving Systems by Elimination](https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:systems-of-equations/x2f8bb11595b61c86:solving-systems-of-equations-with-elimination/v/solving-systems-of-equations-by-elimination)
+        - Practice exercises included
+        
+        **The Organic Chemistry Tutor - Elimination**
+        - [Solving Systems Using Elimination](https://www.youtube.com/watch?v=s7S3oJsv6YA)
+        - Handles multiplication cases
+        - Multiple worked examples
+        
+        **Math with Mr. J - Elimination**
+        - [Elimination Method Step by Step](https://www.youtube.com/watch?v=YJ9cMLBs8Io)
+        - Very clear teaching style
+        """)
+    
+    with st.expander("📺 Special Cases"):
+        st.markdown("""
+        **Khan Academy - Number of Solutions**
+        - [Number of Solutions to Systems](https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:systems-of-equations/x2f8bb11595b61c86:number-of-solutions-to-systems-of-equations/v/inconsistent-systems-of-equations)
+        - Covers no solution and infinite solutions
+        
+        **The Organic Chemistry Tutor - Special Cases**
+        - [Systems with No Solution or Infinite Solutions](https://www.youtube.com/watch?v=6kzSK9-9kBg)
+        - Visual explanations of parallel and identical lines
+        """)
+    
+    with st.expander("📺 Word Problems"):
+        st.markdown("""
+        **Khan Academy - Systems Word Problems**
+        - [Word Problems with Systems](https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:systems-of-equations/x2f8bb11595b61c86:systems-of-equations-word-problems/v/systems-of-equations-word-problems)
+        - Real-world application practice
+        
+        **The Organic Chemistry Tutor - Applications**
+        - [Systems of Equations Word Problems](https://www.youtube.com/watch?v=AZ5F-AYEsME)
+        - Multiple problem types
+        - Age, money, mixture problems
+        
+        **MathAntics - Word Problems**
+        - [Setting Up Systems from Word Problems](https://www.youtube.com/watch?v=KjF3drnRhM8)
+        - Translation strategies
+        """)
+    
+    st.markdown("---")
+    
+    # IXL Lessons
+    st.subheader("📖 IXL Practice Lessons")
+    st.markdown("Complete these IXL lessons for structured practice and immediate feedback:")
+    
+    grade_select = st.selectbox("Select your math level:", ["Algebra 1", "Algebra 2", "Pre-Calculus"])
+    
+    if grade_select == "Algebra 1":
+        with st.expander("🟢 Algebra 1 - Systems Basics"):
+            st.markdown("""
+            **Understanding Systems**
+            - S.1 - Is (x, y) a solution to the system of equations?
+            - S.2 - Find the number of solutions to a system of equations
+            - S.3 - Classify a system of equations
+            
+            **Solving by Graphing**
+            - S.4 - Solve a system of equations by graphing
+            - S.5 - Solve a system of equations by graphing: word problems
+            
+            **Solving by Substitution**
+            - S.6 - Solve a system of equations using substitution
+            - S.7 - Solve a system of equations using substitution: word problems
+            
+            **Solving by Elimination**
+            - S.8 - Solve a system of equations using elimination
+            - S.9 - Solve a system of equations using elimination: word problems
+            - S.10 - Solve a system of equations using any method
+            - S.11 - Solve a system of equations using any method: word problems
+            """)
+        
+        with st.expander("🟡 Algebra 1 - Applications"):
+            st.markdown("""
+            **Word Problem Practice**
+            - S.12 - Write a system of equations given a graph
+            - S.13 - Write and solve a system of equations
+            - S.14 - Solve a system of equations by graphing: word problems
+            - S.15 - Systems of equations word problems
+            
+            **Real-World Applications**
+            - S.16 - Rate problems
+            - S.17 - Mixture problems
+            - S.18 - Distance-rate-time problems
+            """)
+    
+    elif grade_select == "Algebra 2":
+        with st.expander("🟢 Algebra 2 - Advanced Systems"):
+            st.markdown("""
+            **Linear Systems**
+            - A.1 - Solve systems of linear equations
+            - A.2 - Determine the number of solutions to a system
+            - A.3 - Classify systems of equations
+            
+            **Systems with Three Variables**
+            - A.4 - Solve a system of equations in three variables
+            - A.5 - Solve a system of equations in three variables using elimination
+            
+            **Matrix Methods**
+            - A.6 - Solve systems using matrices
+            - A.7 - Solve systems using augmented matrices
+            - A.8 - Identify invertible matrices and their inverses
+            
+            **Linear-Quadratic Systems**
+            - A.9 - Solve a linear-quadratic system by graphing
+            - A.10 - Solve a linear-quadratic system using substitution
+            """)
+    
+    else:  # Pre-Calculus
+        with st.expander("🟢 Pre-Calculus - Systems"):
+            st.markdown("""
+            **Advanced Systems**
+            - P.1 - Solve systems of linear and quadratic equations
+            - P.2 - Solve systems of nonlinear equations
+            - P.3 - Systems of linear inequalities
+            - P.4 - Linear programming
+            - P.5 - Solve systems using matrices and determinants
+            """)
+    
+    st.info("💡 **IXL Tip:** Try to achieve 80%+ mastery on each lesson before moving to the next!")
+    
+    st.markdown("---")
+    
+    # Interactive Tools
+    st.subheader("🛠️ Interactive Tools")
+    
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.markdown("""
+        **Desmos Graphing Calculator**
+        - [www.desmos.com/calculator](https://www.desmos.com/calculator)
+        - Free online graphing tool
+        - Perfect for visualizing systems
+        - Can check your graphing solutions
+        
+        **GeoGebra Systems Solver**
+        - [www.geogebra.org](https://www.geogebra.org/m/znssntar)
+        - Interactive system solver
+        - Shows step-by-step solutions
+        - Great for checking work
+        """)
+    
+    with col2:
+        st.markdown("""
+        **Symbolab Systems Solver**
+        - [www.symbolab.com](https://www.symbolab.com/solver/system-of-equations-calculator)
+        - Shows detailed solution steps
+        - Handles all three methods
+        - Good for verification
+        
+        **Wolfram Alpha**
+        - [www.wolframalpha.com](https://www.wolframalpha.com)
+        - Powerful computational engine
+        - Type: "solve x + y = 5, x - y = 1"
+        - Shows graphs and solutions
+        """)
+    
+    st.markdown("---")
+    
+    # Study Guides and Notes
+    st.subheader("📝 Study Guides & Notes")
+    
+    with st.expander("Written Resources"):
+        st.markdown("""
+        **Paul's Online Math Notes**
+        - [Systems of Equations](https://tutorial.math.lamar.edu/Classes/Alg/SystemsTwoVrble.aspx)
+        - Comprehensive written explanations
+        - Practice problems with solutions
+        
+        **Purplemath - Systems**
+        - [Systems of Linear Equations](https://www.purplemath.com/modules/systlin1.htm)
+        - Step-by-step tutorials
+        - Clear examples
+        
+        **Math is Fun - Systems**
+        - [Solving Systems of Equations](https://www.mathsisfun.com/algebra/systems-linear-equations.html)
+        - Simple explanations
+        - Interactive examples
+        """)
+    
+    st.markdown("---")
+    
+    # Practice Worksheets
+    st.subheader("📄 Practice Worksheets")
+    
+    st.markdown("""
+    **Kuta Software** - Free worksheets with answer keys
+    - Search "Kuta Software Systems of Equations" for printable practice
+    - Multiple difficulty levels available
+    
+    **Math-Drills.com** - Worksheet generator
+    - [Systems of Equations Worksheets](https://www.math-drills.com/)
+    - Can generate custom practice sets
+    """)
+    
+    st.markdown("---")
+    
+    # Study Tips
+    st.subheader("💡 How to Use These Resources")
+    
+    study_tips_df = pd.DataFrame({
+        'Resource Type': ['Videos', 'IXL Lessons', 'Interactive Tools', 'Study Guides', 'Practice Worksheets'],
+        'Best Used For': [
+            'Learning new concepts, visual explanations',
+            'Structured practice with immediate feedback',
+            'Checking your work, visualizing problems',
+            'Review, looking up specific topics',
+            'Timed practice, simulating test conditions'
+        ],
+        'Recommended Time': [
+            '15-20 min per topic',
+            '20-30 min per lesson',
+            'As needed for verification',
+            '10-15 min for reference',
+            '20-30 min per worksheet'
+        ]
+    })
+    
+    st.dataframe(study_tips_df, use_container_width=True, hide_index=True)
+    
+    st.success("🎯 **Study Plan Suggestion:** Watch a video → Practice on IXL → Do a worksheet → Check with tools!")
+
 # ==================== EXAM DAY TIPS ====================
 elif tutorial_section == "🎓 Exam Day Tips":
     st.header("Exam Day Success Tips")
@@ -1599,7 +1878,7 @@ st.markdown("---")
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    st.metric("Sections Completed", f"{len(st.session_state.completed_sections)}/10")
+    st.metric("Sections Completed", f"{len(st.session_state.completed_sections)}/11")
 
 with col2:
     if hasattr(st.session_state, 'test_score'):
